@@ -1,0 +1,35 @@
+<section id="news" class="container content-section">
+	<h2 class="text-center"><u>Notícias</u></h2>			
+	<table class="table">
+		<% unless  @posts.nil? || @posts.empty?  %>
+			<% @posts.each do |p|%>
+			<tr>
+				<td class= "text-center">
+					<%= image_tag  "#{ p.url_image}", :width => "100%" %><br>
+					<% if p.url_image.blank? %>
+						<iframe width="100%"
+							src=<%="https://www.youtube.com/embed/#{p.key_youtube}"%>>
+						</iframe>
+					<% end %>
+				</td>	
+			</tr>
+			<tr>
+				<td>
+					<p>
+						<h3 class="text-center text-info"><%= p.title %></h3>
+						<i><h5 class="text-center"><%= l p.created_at, format: :long %></h5></i>
+						<%= p.description %>
+					</p>
+				</td>												
+			</tr>
+			
+		<% end %>
+		<% else %>
+			<tr>
+				<td colspan="2" class="text-center">
+					Nenhuma notícia foi postada.
+				</td>
+			</tr>			
+		<% end %>
+	</table>
+</section>

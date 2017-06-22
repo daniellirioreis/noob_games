@@ -10,3 +10,5 @@ gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'simple_form'
+gem 'devise'
