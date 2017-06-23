@@ -15,11 +15,14 @@
 			</tr>
 			<tr>
 				<td>
-					<p>
 						<h3 class="text-center text-info"><%= p.title %></h3>
 						<i><h5 class="text-center"><%= l p.created_at, format: :long %></h5></i>
-						<%= p.description %>
-					</p>
+						<p>						
+							<%= p.description %>
+						</p>
+						<small class="text-center">
+							<%= p.user %>
+						</small>						
 				</td>												
 			</tr>
 			
