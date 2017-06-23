@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Noob Games</title>
+		<link rel="icon" href="/images/icon.icon" type="image/x-icon"/>
+    <title>NoobGames</title>
 
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
@@ -48,12 +48,16 @@
 		  <%= render 'layouts/contact'%>												
 		<% else %>
 			<%= render 'layouts/menu'%>													  
+			<div class="container">
+					<%= yield %>	
+		   </div>	   	    
 		<% end %>
-    <div class="container">
-				<%= yield %>	
-	   </div>	   
 		<!-- Footer -->
-	  <%= render 'layouts/footer'%>														
+	  <%= render 'layouts/footer'%>												
+		<%= render "layouts/login"%>
+	
+
+			
 		<%= javascript_include_tag  "application" %>
  
 </body>

@@ -1,6 +1,7 @@
 <section id="news" class="container content-section">
 	<h2 class="text-center"><u>Notícias</u></h2>			
 	<table class="table">
+		<%@posts = Post.all%>
 		<% unless  @posts.nil? || @posts.empty?  %>
 			<% @posts.each do |p|%>
 			<tr>
@@ -17,11 +18,11 @@
 				<td>
 						<h3 class="text-center text-info"><%= p.title %></h3>
 						<i><h5 class="text-center"><%= l p.created_at, format: :long %></h5></i>
-						<p>						
-							<%= p.description %>
+						<p>	
+								<%= simple_format(p.description)  %>								
 						</p>
 						<small class="text-center">
-							<%= p.user %>
+							<i> publicado por <%= p.user %></i>
 						</small>						
 				</td>												
 			</tr>
