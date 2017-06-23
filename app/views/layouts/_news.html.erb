@@ -7,7 +7,7 @@
 				<td class= "text-center">
 					<%= image_tag  "#{ p.url_image}", :width => "100%" %><br>
 					<% if p.url_image.blank? %>
-						<iframe width="100%"
+						<iframe width="100%" height="400"
 							src=<%="https://www.youtube.com/embed/#{p.key_youtube}"%>>
 						</iframe>
 					<% end %>

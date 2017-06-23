@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+				<%= image_tag  "/images/logo.png", :width => 100 %>
+      </a>
+    </div>
+		<br>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+        <ul class="nav navbar-nav">
+            <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+            <li class="hidden">
+                <a href="#page-top"></a>
+            </li>
+						<li>
+                <a class="page-scroll" href="/posts">Notícias</a>
+            </li>								
+						<li>									
+							<%= link_to destroy_user_session_path, :class => "page-scroll", :data => { :confirm => 'Deseja realmenta fazer logoff' }, :method => :get, :tabindex => "-1" do %>
+								logoff
+					    <% end %>												    
+						</li>
+        </ul>
+    </div>
+  </div>
+</nav>

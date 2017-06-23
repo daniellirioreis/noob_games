@@ -32,11 +32,11 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
     <!-- Navigation -->
-		<%= render 'layouts/navigation'%>												
-    <!-- Intro Header -->
-		<%= render 'layouts/header'%>												
 		
 		<% unless user_signed_in? %>
+			<%= render 'layouts/navigation'%>												
+			<!-- Intro Header -->
+			<%= render 'layouts/header'%>			
 			<!-- news -->    
 		  <%= render 'layouts/news'%>												
 
@@ -46,13 +46,14 @@
 		  <%= render 'layouts/service'%>												
 	    <!-- Contact Section -->
 		  <%= render 'layouts/contact'%>												
+		<% else %>
+			<%= render 'layouts/menu'%>													  
 		<% end %>
-		<!-- Footer -->
-	  <%= render 'layouts/footer'%>												
     <div class="container">
 				<%= yield %>	
 	   </div>	   
-		
+		<!-- Footer -->
+	  <%= render 'layouts/footer'%>														
 		<%= javascript_include_tag  "application" %>
  
 </body>

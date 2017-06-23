@@ -17,7 +17,6 @@
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
-								<% unless user_signed_in? %>
 									<li>
 	                    <a class="page-scroll" href="#news">notícias</a>
 	                </li>
@@ -33,15 +32,6 @@
 	                <li>
 	                    <a class="page-scroll" href="/users/sign_in">Logar</a>
 	                </li>                	
-								<% else %>
-									<li>
-									
-										<%= link_to destroy_user_session_path, :class => "page-scroll", :data => { :confirm => 'Deseja realmenta fazer logoff' }, :method => :get, :tabindex => "-1" do %>
-											logoff
-								    <% end %>												    
-									</li>
-								<% end %>
-
             </ul>
         </div>
         <!-- /.navbar-collapse -->
