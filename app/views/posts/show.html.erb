@@ -1,29 +1,24 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @post.user %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @post.description %>
-</p>
-
-<p>
-  <strong>Url image:</strong>
-  <%= @post.url_image %>
-</p>
-
-<p>
-  <strong>Key youtube:</strong>
-  <%= @post.key_youtube %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<table class="table">
+		<tr>
+			<td class= "text-center">
+				<%= image_tag  "#{ @post.url_image}", :width => "#{@post.width}%" %><br>
+				<% if @post.url_image.blank? %>
+					<iframe width="100%" height="400"
+						src=<%="https://www.youtube.com/embed/#{@post.key_youtube}"%>>
+					</iframe>
+				<% end %>
+			</td>	
+		</tr>
+		<tr>
+			<td>
+					<h3 class="text-center text-info"><%= @post.title %></h3>
+					<i><h5 class="text-center"><%= l @post.created_at, format: :long %></h5></i>
+					<p>	
+							<%= simple_format(@post.description)  %>								
+					</p>
+					<small class="text-center">
+						<i> publicado por <%= @post.user %></i>
+					</small>						
+			</td>												
+		</tr>
+</table>

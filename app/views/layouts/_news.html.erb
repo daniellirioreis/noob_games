@@ -6,7 +6,7 @@
 			<% @posts.each do |p|%>
 			<tr>
 				<td class= "text-center">
-					<%= image_tag  "#{ p.url_image}", :width => "100%" %><br>
+					<%= image_tag  "#{ p.url_image}", :width => "#{p.width}%" %><br>
 					<% if p.url_image.blank? %>
 						<iframe width="100%" height="400"
 							src=<%="https://www.youtube.com/embed/#{p.key_youtube}"%>>
