@@ -1,7 +1,7 @@
 <section id="news" class="container content-section">
 	<h2 class="text-center"><u>Notícias</u></h2>			
 	<table class="table">
-		<%@posts = Post.all%>
+		<%@posts = Post.sorted %>
 		<% unless  @posts.nil? || @posts.empty?  %>
 			<% @posts.each do |p|%>
 			<tr>
